@@ -19,7 +19,7 @@ python -m pip install git+https://gitlab.com/nslr/nslr
 Install [Mixture of von Mises disttributions](https://framagit.org/fraschelle/mixture-of-von-mises-distributionss)
 
 ```bash
-git clone https://framagit.org/fraschelle/mixture-of-von-mises-distributions.git
+git clone https://framagit.org/fraschelle/mixture-of-von-mises-distributions.git mixture
 ```
 
 ### Features extraction

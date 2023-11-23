@@ -5,7 +5,7 @@ import os
 import re
 import scipy
 from scipy import stats
-import vonMisesMixtures as vonmises
+import mixture.vonMisesMixtures as vonmises
 
 
 def str_to_nparray(string):
