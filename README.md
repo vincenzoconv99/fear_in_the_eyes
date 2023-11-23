@@ -20,8 +20,6 @@ Install [Mixture of von Mises disttributions](https://framagit.org/fraschelle/mi
 
 ```bash
 git clone https://framagit.org/fraschelle/mixture-of-von-mises-distributions.git
-cd mixture-of-von-mises-distributions/
-pip install .
 ```
 
 ### Features extraction
