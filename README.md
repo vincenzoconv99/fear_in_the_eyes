@@ -16,6 +16,14 @@ Install [NSLR-HMM](https://gitlab.com/nslr/nslr-hmm)
 python -m pip install git+https://gitlab.com/nslr/nslr
 ```
 
+Install [Mixture of von Mises disttributions](https://framagit.org/fraschelle/mixture-of-von-mises-distributionss)
+
+```bash
+git clone https://framagit.org/fraschelle/mixture-of-von-mises-distributions.git
+cd mixture-of-von-mises-distributions/
+pip install .
+```
+
 ### Features extraction
 Extract event-related Ornstein-Uhlenbeck features from [Diagnostic Facial Features & Fear Generalization dataset](https://osf.io/4gz7f/) (`datasets/Reutter`) launching the module `extract_OU_params.py`, results will be saved in `features/Reutter_OU_posterior_VI`.
 
@@ -23,4 +31,4 @@ After that, extract the subject- and trial-related features by launching the mod
 
 
 ### Train and test
-Module `kfold_social_anxiety.py` exploit different regressors for sias recognition on the features extracted as an Ornstein-Uhlenbeck process.
+Modules `clf_predict_SIAS.py`, `clf_predict_LDS.py`, `clf_predict_SHOCK_EXP.py` and `clf_predict_STIMULUS.py`  exploit different classifiers for labels prediction on the extracted features.
