@@ -1,0 +1,1225 @@
+
+Class counts:
+(array([False,  True]), array([18, 25], dtype=int64))
+Threshold: 17
+ 
+Selecting the current features
+Training and testing models with  all ,  all
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 0.081223122240343}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.42857142857142855
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 0 1 1 0 0 1 0]
+
+Cross Validation:
+[0.66666667 0.44444444 0.44444444 0.75       0.5       ]
+Average CV score: 0.5611111111111111
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 9.089063306761192, 'svc__gamma': 0.11850511614873088}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.761904761904762
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.66666667 0.55555556 0.55555556 0.75       0.625     ]
+Average CV score: 0.6305555555555555
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 50, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 2, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.5555555555555556
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 1 0 1 1]
+
+Cross Validation:
+[0.66666667 0.66666667 0.55555556 0.75       0.625     ]
+Average CV score: 0.6527777777777778
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 100, 'adaboostclassifier__learning_rate': 0.2}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7058823529411765
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 1 1 0 1 1 1 1 1 0 1 1]
+
+Cross Validation:
+[0.66666667 0.55555556 0.66666667 0.625      0.5       ]
+Average CV score: 0.6027777777777777
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.8184934290405481, 'logisticregression__penalty': 'l1'}
+	F1: 0.9375
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7058823529411765
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 1 1 1 1 1 1 0]
+
+Cross Validation:
+[0.66666667 0.33333333 0.55555556 0.625      0.5       ]
+Average CV score: 0.5361111111111111
+ 
+Selecting the current features
+Training and testing models with  all ,  ou
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 0.01419071580815294}
+	F1: 0.8749999999999999
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.625
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 0 1 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 1 1 1 0 1 1 0]
+
+Cross Validation:
+[0.66666667 0.55555556 0.44444444 0.625      0.625     ]
+Average CV score: 0.5833333333333334
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 8.58674476597827, 'svc__gamma': 0.13941706520135208}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.761904761904762
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.77777778 0.44444444 0.55555556 0.75       0.625     ]
+Average CV score: 0.6305555555555555
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 150, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 2, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.631578947368421
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.66666667 0.33333333 0.55555556 0.75       0.625     ]
+Average CV score: 0.586111111111111
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 150, 'adaboostclassifier__learning_rate': 0.1}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.5882352941176471
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 1 1 0 1 1 1 1 1 0 0 1]
+
+Cross Validation:
+[0.66666667 0.55555556 0.66666667 0.625      0.75      ]
+Average CV score: 0.6527777777777778
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.15331837687229324, 'logisticregression__penalty': 'l2'}
+	F1: 0.9032258064516129
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.625
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 0 0 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 1 1 1 0 1 1 0]
+
+Cross Validation:
+[0.55555556 0.66666667 0.77777778 0.625      0.5       ]
+Average CV score: 0.625
+ 
+Selecting the current features
+Training and testing models with  all ,  classic
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 0.4477116390667658}
+	F1: 0.9696969696969697
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.5333333333333333
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 0 1 1 1 0 1 0]
+
+Cross Validation:
+[0.44444444 0.11111111 0.44444444 0.625      0.375     ]
+Average CV score: 0.4
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 0.7059263739228233, 'svc__gamma': 0.01925994572742552}
+	F1: 0.8292682926829268
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.8
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 1 0 1 0 1 1 1 1 1 0 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.55555556 0.33333333 0.625      0.625     ]
+Average CV score: 0.538888888888889
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 150, 'randomforestclassifier__min_samples_split': 8, 'randomforestclassifier__min_samples_leaf': 2, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7368421052631579
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.77777778 0.33333333 0.33333333 0.75       0.875     ]
+Average CV score: 0.6138888888888889
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 150, 'adaboostclassifier__learning_rate': 0.01}
+	F1: 0.9142857142857143
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.6666666666666665
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 1 0 1 1 1 1 1 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.44444444 0.33333333 0.625      0.25      ]
+Average CV score: 0.4416666666666666
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.652365455100565, 'logisticregression__penalty': 'l1'}
+	F1: 0.9032258064516129
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.625
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 0 0 0 0 0 0 0 1 1 0 1 1 1 0 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 1 1 1 1 1 0 1 0]
+
+Cross Validation:
+[0.33333333 0.11111111 0.44444444 0.5        0.375     ]
+Average CV score: 0.35277777777777775
+ 
+Selecting the current features
+Training and testing models with  fix ,  all
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 49.02292999676557}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.6666666666666665
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 1 1 1 1 1 1 0 1 0]
+
+Cross Validation:
+[0.77777778 0.44444444 0.44444444 0.625      0.625     ]
+Average CV score: 0.5833333333333334
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 9.814320752786237, 'svc__gamma': 0.1885407704523195}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.6666666666666665
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 0 0 1 0 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.66666667 0.55555556 0.55555556 0.75       0.625     ]
+Average CV score: 0.6305555555555555
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 100, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 4, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': False}
+	F1: 0.9714285714285714
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7368421052631579
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 1 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 0 0 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.77777778 0.44444444 0.625      0.75      ]
+Average CV score: 0.6305555555555555
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 150, 'adaboostclassifier__learning_rate': 0.1}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.3076923076923077
+
+Test F1 Score: 0.47058823529411764
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 0 0 1 1]
+
+Cross Validation:
+[0.55555556 0.55555556 0.55555556 0.375      0.5       ]
+Average CV score: 0.5083333333333334
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 5.873913393002689, 'logisticregression__penalty': 'l2'}
+	F1: 0.9696969696969697
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.7000000000000001
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.77777778 0.44444444 0.44444444 0.625      0.625     ]
+Average CV score: 0.5833333333333334
+ 
+Selecting the current features
+Training and testing models with  fix ,  ou
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 0.4854869496393082}
+	F1: 0.9375
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.8
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 0]
+
+Cross Validation:
+[0.66666667 0.33333333 0.44444444 0.625      0.625     ]
+Average CV score: 0.538888888888889
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 11.360589611768688, 'svc__gamma': 0.24059001565912116}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.6666666666666665
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 0 0 1 0 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.55555556 0.66666667 0.375      0.625     ]
+Average CV score: 0.5555555555555556
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 100, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 6, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 0.8749999999999999
+
+Testing...
+
+Test Accuracy Score: 0.8461538461538461
+
+Test F1 Score: 0.875
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[0 1 0 0 0 1 0 0 1 1 1 1 1 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 0 0 1 1 1 1 0 1 1 1 1]
+
+Cross Validation:
+[0.44444444 0.55555556 0.55555556 0.75       0.625     ]
+Average CV score: 0.586111111111111
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 100, 'adaboostclassifier__learning_rate': 0.2}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.3076923076923077
+
+Test F1 Score: 0.47058823529411764
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 0 0 1 1]
+
+Cross Validation:
+[0.55555556 0.66666667 0.22222222 0.625      0.625     ]
+Average CV score: 0.538888888888889
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 3.4678260420581632, 'logisticregression__penalty': 'l1'}
+	F1: 0.9375
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.8
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 0]
+
+Cross Validation:
+[0.55555556 0.44444444 0.55555556 0.625      0.5       ]
+Average CV score: 0.5361111111111111
+ 
+Selecting the current features
+Training and testing models with  fix ,  classic
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 1.016121487501015}
+	F1: 0.625
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.42857142857142855
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[0 0 0 1 1 1 1 0 0 1 1 0 0 0 0 0 1 1 1 1 1 0 0 1 1 0 0 1 1 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 0 1 1 1 0 0 1 0]
+
+Cross Validation:
+[0.44444444 0.55555556 0.33333333 0.5        0.5       ]
+Average CV score: 0.4666666666666666
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 0.7763398543014408, 'svc__gamma': 0.006083932301129604}
+	F1: 0.7234042553191489
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.761904761904762
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.55555556 0.44444444 0.625      0.625     ]
+Average CV score: 0.5611111111111111
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 150, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 4, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': False}
+	F1: 0.8125
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.6153846153846154
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[0 0 0 1 0 1 0 0 1 0 1 1 0 0 1 0 0 1 0 1 0 1 1 1 1 1 0 1 1 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 0 0 1 0 1 0 0 0 1 1 1]
+
+Cross Validation:
+[0.77777778 0.77777778 0.44444444 0.875      0.75      ]
+Average CV score: 0.725
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 50, 'adaboostclassifier__learning_rate': 0.1}
+	F1: 0.8717948717948718
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.631578947368421
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 1 0 1 1 0 1 1 1 1 0 0 1 0 0 1 1 1 0 1 1 1 1 1 0 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 1 0 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.77777778 0.66666667 0.44444444 0.625      0.625     ]
+Average CV score: 0.6277777777777778
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.7390642038532952, 'logisticregression__penalty': 'l1'}
+	F1: 0.5333333333333333
+
+Testing...
+
+Test Accuracy Score: 0.3076923076923077
+
+Test F1 Score: 0.39999999999999997
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[0 0 0 0 1 1 1 0 0 1 1 0 0 0 1 0 1 1 1 1 1 1 0 1 0 0 0 0 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 0 0 0 1 1 1 1 0 1]
+
+Cross Validation:
+[0.44444444 0.44444444 0.33333333 0.75       0.75      ]
+Average CV score: 0.5444444444444445
+ 
+Selecting the current features
+Training and testing models with  sac ,  all
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 0.08293887196266556}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.5
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 1 1 0 1 1 0 0 1 0]
+
+Cross Validation:
+[0.77777778 0.44444444 0.33333333 0.75       0.375     ]
+Average CV score: 0.5361111111111111
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 6.4386988679569015, 'svc__gamma': 0.419500481412104}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.761904761904762
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.77777778 0.55555556 0.75       0.25      ]
+Average CV score: 0.5777777777777778
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 50, 'randomforestclassifier__min_samples_split': 5, 'randomforestclassifier__min_samples_leaf': 2, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': False}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.5882352941176471
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 1 0 1 0]
+
+Cross Validation:
+[0.66666667 0.44444444 0.33333333 0.75       0.625     ]
+Average CV score: 0.5638888888888889
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 150, 'adaboostclassifier__learning_rate': 0.01}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7368421052631579
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 0 1 1 1 1 1 1 1 1 0 1 1]
+
+Cross Validation:
+[0.66666667 0.33333333 0.55555556 0.75       0.5       ]
+Average CV score: 0.5611111111111111
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 2.349316673399756, 'logisticregression__penalty': 'l2'}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.5
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 1 1 0 1 1 0 0 1 0]
+
+Cross Validation:
+[0.55555556 0.55555556 0.33333333 0.75       0.375     ]
+Average CV score: 0.513888888888889
+ 
+Selecting the current features
+Training and testing models with  sac ,  ou
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 0.05251705735060397}
+	F1: 0.8749999999999999
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.5
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 0 0 1 0 1 0 1 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 0 0 1 0]
+
+Cross Validation:
+[0.66666667 0.77777778 0.44444444 0.75       0.625     ]
+Average CV score: 0.6527777777777778
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 0.042517835140817514, 'svc__gamma': 0.006391247791135386}
+	F1: 0.7234042553191489
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.761904761904762
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.77777778 0.55555556 0.625      0.625     ]
+Average CV score: 0.6277777777777779
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 50, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 4, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 0.9375
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.5
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 1 0 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 0 1 0 0]
+
+Cross Validation:
+[0.55555556 0.55555556 0.55555556 0.625      0.5       ]
+Average CV score: 0.5583333333333333
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 50, 'adaboostclassifier__learning_rate': 0.01}
+	F1: 0.9375
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.75
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 1 0 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 1 1 0 1 1 1 1 1 1 0 0]
+
+Cross Validation:
+[0.88888889 0.88888889 0.55555556 0.75       0.5       ]
+Average CV score: 0.7166666666666666
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.21185143340163803, 'logisticregression__penalty': 'l2'}
+	F1: 0.8749999999999999
+
+Testing...
+
+Test Accuracy Score: 0.38461538461538464
+
+Test F1 Score: 0.5
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 0 0 1 0 1 0 1 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 0 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 0 1 1 1 1 0 0 1 0]
+
+Cross Validation:
+[0.77777778 0.66666667 0.44444444 0.75       0.625     ]
+Average CV score: 0.6527777777777778
+ 
+Selecting the current features
+Training and testing models with  sac ,  classic
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 1.6710783654087369}
+	F1: 0.8387096774193549
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.5882352941176471
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 1 0 1 0 1 1 1 1 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 1 1 0 1 1 1 0 1 1]
+
+Cross Validation:
+[0.44444444 0.33333333 0.44444444 0.625      0.375     ]
+Average CV score: 0.4444444444444445
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 1.4026323841219352, 'svc__gamma': 0.008643808524857166}
+	F1: 0.75
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.8
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 1 0 1 0 1 1 1 1 0 0 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.55555556 0.55555556 0.625      0.625     ]
+Average CV score: 0.5833333333333334
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 50, 'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__min_samples_leaf': 6, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 0.8387096774193549
+
+Testing...
+
+Test Accuracy Score: 0.46153846153846156
+
+Test F1 Score: 0.5882352941176471
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 0 1 0 0 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 0 1 1 1 0 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 1 0 1 1 0 1 1 1 1 0 1 0]
+
+Cross Validation:
+[0.55555556 0.33333333 0.44444444 0.75       0.25      ]
+Average CV score: 0.4666666666666666
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 50, 'adaboostclassifier__learning_rate': 0.1}
+	F1: 1.0
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.6666666666666665
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[1 0 0 1 1 1 1 1 1 1 0 1 1]
+
+Cross Validation:
+[0.33333333 0.55555556 0.44444444 0.625      0.375     ]
+Average CV score: 0.4666666666666666
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.6362297300513023, 'logisticregression__penalty': 'l1'}
+	F1: 0.7333333333333334
+
+Testing...
+
+Test Accuracy Score: 0.5384615384615384
+
+Test F1 Score: 0.6666666666666665
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 1 1 1 0 1 1 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 0 1 1 1 1 1 1 1 0 1 1]
+
+Cross Validation:
+[0.33333333 0.44444444 0.44444444 0.625      0.375     ]
+Average CV score: 0.4444444444444445
+ 
+Selecting the current features
+Training and testing models with  pupil ,  _
+
+Training ONE model... (linSVM)
+Best parameters:  {'linearsvc__C': 6.318516098903569}
+	F1: 0.7428571428571428
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.6666666666666666
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 0 1 1 1 1 0 1 0 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 1 1 0 1 1 0 0 1 1 0 1]
+
+Cross Validation:
+[0.66666667 0.44444444 0.55555556 0.75       0.875     ]
+Average CV score: 0.6583333333333334
+ 
+
+Training ONE model... (SVM)
+Best parameters:  {'svc__C': 2.8813172252850565, 'svc__gamma': 0.023149019207871848}
+	F1: 0.7555555555555554
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7368421052631579
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 1 1 0 1 1 1 1 1 1 1 1]
+
+Cross Validation:
+[0.55555556 0.44444444 0.55555556 0.625      0.75      ]
+Average CV score: 0.586111111111111
+ 
+
+Training ONE model... (RF)
+Best parameters:  {'randomforestclassifier__n_estimators': 50, 'randomforestclassifier__min_samples_split': 8, 'randomforestclassifier__min_samples_leaf': 2, 'randomforestclassifier__max_depth': 90, 'randomforestclassifier__bootstrap': True}
+	F1: 0.7272727272727272
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.7142857142857143
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 0 1 1 0 0 0 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 1 0 0 1 1 0 0 1 1 0 1]
+
+Cross Validation:
+[0.55555556 0.44444444 0.88888889 0.75       0.875     ]
+Average CV score: 0.7027777777777777
+ 
+
+Training ONE model... (AdaBoost)
+Best parameters:  {'adaboostclassifier__n_estimators': 50, 'adaboostclassifier__learning_rate': 0.01}
+	F1: 0.8333333333333333
+
+Testing...
+
+Test Accuracy Score: 0.6923076923076923
+
+Test F1 Score: 0.75
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 0 1 1 0 0 1 1 1 1 1 1 0 1 0 1 1 1 0 0 1 1 1 1 0 1 0 0]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 0 1 1 0 1 1 0 0 1 1 1 1]
+
+Cross Validation:
+[0.77777778 0.33333333 0.55555556 0.625      0.875     ]
+Average CV score: 0.6333333333333334
+ 
+
+Training ONE model... (LogisticRegression)
+Best parameters:  {'logisticregression__C': 0.38609060658660466, 'logisticregression__penalty': 'l1'}
+	F1: 0.7619047619047621
+
+Testing...
+
+Test Accuracy Score: 0.6153846153846154
+
+Test F1 Score: 0.7058823529411765
+ 
+
+Train labels: 
+[1 1 0 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0]
+[1 1 0 1 1 0 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1]
+
+Test labels: 
+[0 0 1 0 1 1 1 1 0 1 1 1 0]
+[0 1 1 1 0 1 1 1 1 1 1 0 0]
+
+Cross Validation:
+[0.66666667 0.44444444 0.55555556 0.75       0.875     ]
+Average CV score: 0.6583333333333334
+ 
