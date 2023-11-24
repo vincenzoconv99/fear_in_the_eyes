@@ -136,9 +136,7 @@ X = X[:, 2:]
 warnings.filterwarnings("ignore", category=UserWarning)
 
 #Models for the classification
-#models_classification = ['linSVM', 'SVM', 'RF', 'AdaBoost', 'LogisticRegression']
-
-models_classification = ['RF']
+models_classification = ['linSVM', 'SVM', 'RF', 'AdaBoost', 'LogisticRegression']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
