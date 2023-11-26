@@ -45,6 +45,7 @@ data_path_pupil = 'data/pupil_data/'
 sbj_feats = []
 
 X_lst = []
+X_lst_avg = []
 actually_kept = []
 
 list_fixations = sorted_nicely(os.listdir(data_path_fix))
@@ -59,8 +60,18 @@ for index, s in enumerate(list_fixations): # Iterating over the various subjects
 
     if curr_sbj in id_tokeep:
         print('Subj: ' + str(curr_sbj))
+
+        # FIXATIONS
+
         df_fix = pd.read_csv(data_path_fix+s)
         df_fix['feature'] = df_fix['feature'].apply(str_to_nparray)
+
+        # Average Mode
+        grouped_fix_avg = df_fix.groupby(['ROI'])['feature'].mean()
+        eye_fix_avg = grouped_fix_avg['eye']
+        mouth_fix_avg = grouped_fix_avg['mouth_nose']
+
+        # Distributions Mode
 
         #Extracting fixation's durations list
         fix_dur = [df_fix['feature'][i][-1] for i in range(len(df_fix['feature'])) if df_fix['feature'][i] is not None]
@@ -75,8 +86,18 @@ for index, s in enumerate(list_fixations): # Iterating over the various subjects
         #Fitting a gamma distribution for fixations duration
         gamma_fix = list(stats.gamma.fit(fix_dur))
 
+        #SACCADES
+
         df_sac = pd.read_csv(data_path_sac+list_saccades[index])
         df_sac['feature'] = df_sac['feature'].apply(str_to_nparray)
+
+        # Average Mode
+
+        grouped_sac_avg = df_sac.groupby(['End_ROI'])['feature'].mean()
+        eye_sac_avg = grouped_sac_avg['eye']
+        mouth_sac_avg = grouped_sac_avg['mouth_nose']
+
+        #Distribution Mode
 
         #Extracting saccades's classic features lists
         sac_dur = [df_sac['feature'][i][-1] for i in range(len(df_sac['feature'])) if df_sac['feature'][i] is not None]
@@ -86,9 +107,9 @@ for index, s in enumerate(list_fixations): # Iterating over the various subjects
         #Deleting the last three feature from the vector
         df_sac['feature'] = [ x[:12] if x is not None else None for x in df_sac['feature'] ]
 
-        grouped = df_sac.groupby(['End_ROI'])['feature'].mean()
-        eye_sac = grouped['eye']
-        mouth_sac = grouped['mouth_nose']
+        grouped_sac = df_sac.groupby(['End_ROI'])['feature'].mean()
+        eye_sac = grouped_sac['eye']
+        mouth_sac = grouped_sac['mouth_nose']
 
         #Fitting gamma, levy and von mises distributions for saccades' durations, amplitude and angle
         gamma_sac = list(stats.gamma.fit(sac_dur))
@@ -112,13 +133,24 @@ for index, s in enumerate(list_fixations): # Iterating over the various subjects
         print('levy_sac ', len(levy_sac))
         print('lognorm_pupil ', len(lognorm_pupil))
 
+        print('eye_fix_avg ', len(eye_fix_avg))
+        print('mouth_fix_avg ', len(mouth_fix_avg))
+        print('eye_sac_avg ', len(eye_sac_avg))
+        print('mouth_sac_avg ', len(mouth_sac_avg))
+
         sbj = np.array([curr_sbj])
         svect = np.hstack([sbj, eye_fix, mouth_fix, gamma_fix,
                            eye_sac, mouth_sac, gamma_sac, levy_sac, von_sac,
                            lognorm_pupil])
+        svect_avg = np.hstack([sbj, eye_fix_avg, mouth_fix_avg, eye_sac_avg, mouth_sac_avg])
+        
         X_lst.append(svect)
+        X_lst_avg.append(svect_avg)
         actually_kept.append(curr_sbj)
 
 
 df = pd.DataFrame(X_lst)
 df.to_csv('subject_features.csv')
+
+df = pd.DataFrame(X_lst_avg)
+df.to_csv('subject_features_avg.csv')
