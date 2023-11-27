@@ -34,7 +34,7 @@ def load_sias_scores(path):
     sias_df['score'] = sias_score
     
     thr = int(np.round((np.median(sias_score))))
-    sias_df['anxiety'] = sias_score >= thr
+    sias_df['anxiety'] = sias_score > thr
     print('\nClass counts:')
     print(np.unique(sias_df['anxiety'].to_numpy(), return_counts=True))
     print('Threshold: ' + str(thr))
@@ -67,7 +67,6 @@ def train_sklearn(X, y, model='RF', hyper_search=True):
         distributions = {
             'logisticregression__C': scipy.stats.expon(scale=1),
             'logisticregression__penalty': ['l1', 'l2']}
-
     pipe = make_pipeline(StandardScaler(),
                          skmodel)
 
@@ -93,44 +92,33 @@ def train_sklearn(X, y, model='RF', hyper_search=True):
 
 
 def get_features(X, configuration1, configuration2):
-    if configuration1 == 'all':
-        if configuration2 == 'all':
-            return X
-        elif configuration2 == 'ou':
-            return np.concatenate((X[:, 0:24], X[:, 27:51], X[:, -3:]), axis=1)
-        elif configuration2 == 'classic':
-            return np.concatenate((X[:, 24:27], X[:, 51:]), axis=1)
-        
-    elif configuration1 == 'fix':
-        if configuration2 == 'all':
-            return X[:, 0:27]
-        elif configuration2 == 'ou':
-            return X[:, 0:24]
-        elif configuration2 == 'classic':
-            return X[:, 24:27]
-    
-    elif configuration1 == 'sac':
-        if configuration2 == 'all':
-            return X[:, 27: -3]
-        elif configuration2 == 'ou':
-            return X[:, 27:51]
-        elif configuration2 == 'classic':
-            return X[:, 51:-3]
-        
-    elif configuration1 == 'pupil':
-        return X[:, -3:]
+    configurations = {
+        'all': {'all': slice(None), 'ou': (slice(0, 24), slice(27, 51), slice(-3, None)),
+                'classic': (slice(24, 27), slice(51, None))},
+        'fix': {'all': slice(0, 27), 'ou': slice(0, 24), 'classic': slice(24, 27)},
+        'sac': {'all': slice(27, -3), 'ou': slice(27, 51), 'classic': slice(51, -3)},
+        'pupil': {'_': slice(-3, None)}
+    }
+
+    return X[:, configurations[configuration1][configuration2]]
+
 
 
 #------------------ MAIN -------------------------
 
 subject_data_path = './data/subject_features.csv'
+subject_avg_data_path = './data/subject_features_avg.csv'
 path_Q = 'data/'
 
 anxiety_data = load_sias_scores(path_Q)
 
 y = anxiety_data['anxiety'].to_numpy()
 X = np.array(pd.read_csv(subject_data_path).values.tolist())
+X_avg = np.array(pd.read_csv(subject_avg_data_path).values.tolist())
+sbj_indexes = [int(x) for x in X[:, 0]]
 X = X[:, 2:]
+X_avg = X_avg[:, 2:]
+
 
 # Ignore all deprecation warnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -138,27 +126,35 @@ warnings.filterwarnings("ignore", category=UserWarning)
 #Models for the classification
 models_classification = ['linSVM', 'SVM', 'RF', 'AdaBoost', 'LogisticRegression']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+train_indexes, test_indexes, y_train, y_test = train_test_split(sbj_indexes, y, test_size=0.3, random_state=42, stratify=y)
+
+X_train = X[train_indexes]
+X_test = X[test_indexes]
+X_train_avg = X_avg[train_indexes]
+X_test_avg = X_avg[test_indexes]
 
 
-for models, configuration1, configuration2 in  [ (models_classification, 'all', 'all'),
-                                                 (models_classification, 'all', 'ou'),
-                                                 (models_classification, 'all', 'classic'),
-                                                 (models_classification, 'fix', 'all'),
-                                                 (models_classification, 'fix', 'ou'),
-                                                 (models_classification, 'fix', 'classic'),
-                                                 (models_classification, 'sac', 'all'),
-                                                 (models_classification, 'sac', 'ou'),
-                                                 (models_classification, 'sac', 'classic'), 
-                                                 (models_classification, 'pupil', '_') ]:
+for models, configuration1, configuration2, avg_mode in  [ (models_classification, 'all', 'all', False),
+                                                           (models_classification, 'all', 'ou', False),
+                                                           (models_classification, 'all', 'classic', False),
+                                                           (models_classification, 'fix', 'all', False),
+                                                           (models_classification, 'fix', 'ou', False),
+                                                           (models_classification, 'fix', 'classic', False),
+                                                           (models_classification, 'sac', 'all', False),
+                                                           (models_classification, 'sac', 'ou', False),
+                                                           (models_classification, 'sac', 'classic', False), 
+                                                           (models_classification, 'pupil', '_', False) 
+                                                           (models_classification, 'all', 'all', True)
+                                                ]:
 
     print('Selecting the current features')
 
-    X_selected = get_features(X, configuration1, configuration2)
-    X_train_selected = get_features(X_train, configuration1, configuration2)
-    X_test_selected = get_features(X_test, configuration1, configuration2)
+    X_selected = get_features(X_avg, configuration1, configuration2) if avg_mode==True else get_features(X, configuration1, configuration2)
+    X_train_selected = get_features(X_train_avg, configuration1, configuration2) if avg_mode==True else get_features(X_train, configuration1, configuration2)
+    X_test_selected = get_features(X_test_avg, configuration1, configuration2) if avg_mode==True else get_features(X_test, configuration1, configuration2)
 
-    print('Training and testing models with ', configuration1+' ,  '+configuration2 ) 
+
+    print('Training and testing models with ', configuration1+' ,  '+configuration2, ' and avg mode ', avg_mode) 
 
     for skModel in models:
 
@@ -187,29 +183,29 @@ for models, configuration1, configuration2 in  [ (models_classification, 'all', 
         
 
         print('\nCross Validation:')
-        cvs = cross_val_score(gs, X_selected, y.astype(int), cv=5, scoring='accuracy')
+        cvs = cross_val_score(gs, X_selected, y.astype(int), cv=20, scoring='accuracy')
         print(cvs)
         print('Average CV score: ' + str(np.mean(cvs)))
+        print('STD: ' + str(np.std(cvs)))
         print(' ')
 
-        if(skModel=='RF' and configuration1=='all' and configuration2=='all'):
-            feature_importance = model[-1].feature_importances_
-            feature_names = ['B′11', 'B′12', 'B′22','B*11', 'B*12', 'B*22','Γ′11','Γ′12','Γ′22','Γ*11','Γ*12','Γ*22', 
-                             'B′′11', 'B′′12', 'B′′22','B**11', 'B**12', 'B**22','Γ′′11','Γ′′12','Γ′′22','Γ**11','Γ**12','Γ**22',
-                             'shape′','scale′','loc′',
-                             'B′′′11', 'B′′′12', 'B′′′22','B***11', 'B***12', 'B***22','Γ′′′11','Γ′′′12','Γ′′′22','Γ***11','Γ***12','Γ***22', 
-                             'B′′′′11', 'B′′′′12', 'B′′′′22','B****11', 'B****12', 'B****22','Γ′′′′11','Γ′′′′12','Γ′′′′22','Γ****11','Γ****12','Γ**22',
-                             'shape′′','scale′′','loc′′',
-                             'shape′′′','scale′′′','loc′′′',
-                             'shape′′′′','scale′′′′','loc′′′′',
-                             'alpha','gamma','beta','delta',
-                             'shape′′′′′','scale′′′′′','loc′′′′′' ]
-
-            plt.figure(figsize=(16, 9))
-            plt.title("Feature Importances")
-            plt.bar(feature_names, feature_importance, align="center")
-            plt.xlabel("Feature")
-            plt.ylabel("Feature Importance")
-            plt.xticks(rotation=90)
-            plt.xticks(fontsize=10)
-            plt.show()
+        #if(skModel=='RF' and configuration1=='all' and configuration2=='all'):
+        #    feature_importance = model[-1].feature_importances_
+        #    feature_names = ['B′11', 'B′12', 'B′22','B*11', 'B*12', 'B*22','Γ′11','Γ′12','Γ′22','Γ*11','Γ*12','Γ*22', 
+        #                     'B′′11', 'B′′12', 'B′′22','B**11', 'B**12', 'B**22','Γ′′11','Γ′′12','Γ′′22','Γ**11','Γ**12','Γ**22',
+        #                     'shape′','scale′','loc′',
+        #                     'B′′′11', 'B′′′12', 'B′′′22','B***11', 'B***12', 'B***22','Γ′′′11','Γ′′′12','Γ′′′22','Γ***11','Γ***12','Γ***22', 
+        #                     'B′′′′11', 'B′′′′12', 'B′′′′22','B****11', 'B****12', 'B****22','Γ′′′′11','Γ′′′′12','Γ′′′′22','Γ****11','Γ****12','Γ**22',
+        #                     'shape′′','scale′′','loc′′',
+        #                     'shape′′′','scale′′′','loc′′′',
+        #                     'shape′′′′','scale′′′′','loc′′′′',
+        #                     'alpha','gamma','beta','delta',
+        #                     'shape′′′′′','scale′′′′′','loc′′′′′' ]
+        #    plt.figure(figsize=(16, 9))
+        #    plt.title("Feature Importances")
+        #    plt.bar(feature_names, feature_importance, align="center")
+        #    plt.xlabel("Feature")
+        #    plt.ylabel("Feature Importance")
+        #    plt.xticks(rotation=90)
+        #    plt.xticks(fontsize=10)
+        #    plt.show()

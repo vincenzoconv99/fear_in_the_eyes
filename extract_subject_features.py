@@ -150,7 +150,7 @@ for index, s in enumerate(list_fixations): # Iterating over the various subjects
 
 
 df = pd.DataFrame(X_lst)
-df.to_csv('subject_features.csv')
+df.to_csv('./data/subject_features.csv')
 
 df = pd.DataFrame(X_lst_avg)
-df.to_csv('subject_features_avg.csv')
+df.to_csv('./data/subject_features_avg.csv')
