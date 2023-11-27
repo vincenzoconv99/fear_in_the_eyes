@@ -143,7 +143,7 @@ for models, configuration1, configuration2, avg_mode in  [ (models_classificatio
                                                            (models_classification, 'sac', 'all', False),
                                                            (models_classification, 'sac', 'ou', False),
                                                            (models_classification, 'sac', 'classic', False), 
-                                                           (models_classification, 'pupil', '_', False) 
+                                                           (models_classification, 'pupil', '_', False), 
                                                            (models_classification, 'all', 'all', True)
                                                 ]:
 
